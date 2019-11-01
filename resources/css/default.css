@@ -1,0 +1,190 @@
+@charset 'utf-8';
+
+@font-face {
+ font-family: 'NotoSansKR';
+ font-weight: 100;
+ src: url(../font/NotoSansKR-Thin.eot);
+ src: url(../font/NanumSquare/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'),
+      url(../font/NanumSquare/NotoSansKR-Thin.woff) format('woff'),
+      url(../font/NanumSquare/NotoSansKR-Thin.ttf) format('truetype');
+}
+
+@font-face {
+ font-family: 'NotoSansKR';
+ font-weight: 300;
+ src: url(../font/NotoSansKR-Light.eot);
+ src: url(../font/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'),
+      url(../font/NotoSansKR-Light.woff) format('woff'),
+      url(../font/NotoSansKR-Light.ttf) format('truetype');
+}
+
+@font-face {
+ font-family: 'NotoSansKR';
+ font-weight: 500;
+ src: url(../font/NotoSansKR-Regular.eot);
+ src: url(../font/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'),
+      url(../font/NotoSansKR-Regular.woff) format('woff'),
+      url(../font/NotoSansKR-Regular.ttf) format('truetype');
+}
+
+@font-face {
+ font-family: 'NotoSansKR';
+ font-weight: 700;
+ src: url(../font/NotoSansKR-Bold.eot);
+ src: url(../font/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'),
+      url(../font/NotoSansKR-Bold.woff) format('woff'),
+      url(../font/NotoSansKR-Bold.ttf) format('truetype');
+}
+@font-face {
+ font-family: 'NotoSansKR';
+ font-weight: 900;
+ src: url(../font/NotoSansKR-Black.eot);
+ src: url(../font/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'),
+      url(../font/NotoSansKR-Black.woff) format('woff'),
+      url(../font/NotoSansKR-Black.ttf) format('truetype');
+}
+
+
+/*html body 기본 패딩 값 제거 및 최소 값 지정*/
+html, body { margin: 0; padding: 0; min-width: 320px; }
+
+/*기본 글자 크기 정의*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, 
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, 
+ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;box-sizing: border-box;text-decoration: none;list-style: none; }
+
+body {font-family:'NotoSansKR';line-height: 21px;font-size:14px;font-weight:400;margin: 0;padding: 0;letter-spacing: -1px;color: #666; font-weight:500;}
+
+
+/*a 태그 기본 css 제거*/
+a { background-color: transparent; }
+
+a:active, a:hover { outline-width: 0;}
+
+a { color: inherit; text-decoration: none; box-sizing: border-box; }
+
+a:hover { color: none; }
+
+/*abbr:검색엔진 기본 속성 제거*/
+abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted; }
+
+b, em, strong { font-weight: bold; font-style: normal; }
+
+/*h1 등등 글자 타입 기본 속성 정의*/
+h1 {font-size: 2em;}
+
+mark { background-color: #ff0; color: #000; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sub { bottom: -0.25em; }
+
+sup { top: -0.5em; }
+
+p{display:block; width:100%; }
+
+/* 이미지 기본 css 제거 및 정의 */
+img { border-style: none; }
+
+img { border: 0; vertical-align: top; max-width: 100%; max-height: 100%; }
+
+svg:not(:root) { overflow: hidden; }
+
+hr { box-sizing: content-box; height: 0; overflow: visible; }
+
+/*기본 폼 및 정렬 타입 css 제거 및 기본 정의 */
+button, input, select, textarea { font: inherit; }
+
+button, input, select { overflow: visible; }
+
+button, input, select, textarea { margin: 0; }
+
+button, select { text-transform: none; }
+
+button, [type="button"], [type="reset"], [type="submit"] { cursor: pointer; }
+
+[disabled] { cursor: default; }
+
+button, html [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+button:-moz-focusring, input:-moz-focusring { outline: 1px dotted ButtonText; }
+
+button { outline: 0; background: none; border: 0; cursor: pointer; }
+
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+
+legend { box-sizing: border-box; color: inherit; display: table; max-width: 100%; padding: 0; white-space: normal; }
+
+textarea { overflow: auto; }
+
+[type="checkbox"], [type="radio"] { box-sizing: border-box; padding: 0; }
+
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button { height: auto; }
+
+[type="search"] { -webkit-appearance: textfield; }
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+nav {display: none;}
+
+ul, ol { list-style: none; }
+
+table { border-spacing: 0; }
+
+caption { height: 0; overflow: hidden; font-size: 0; }
+
+/*de.whale에 추가한것들*/
+b{font-weight: bold;}
+
+/*힌줄 줄임*/
+.text_ellipsis{  width: 80%;    display: inline-block;    overflow: hidden;    text-overflow: ellipsis;    white-space: nowrap;}
+
+/*kepco-커스텀*/
+.button_kepco_large {padding: 13.5px 20px;font-size: 17px;border-radius: 3px;text-align: center;display: inline-block;position: relative;}
+.button_kepco_short {    width: 80px;    font-size: 14px;    height: 25px;    line-height: 27px;    display: inline-block;    border-radius: 5px;   vertical-align: middle;}
+
+.input_kepco{    border: 1px solid #bfbfbf;    border-radius: 3px;    height: 40px;    padding: 0px 5%;    width: 100%; font-size: 15px;}
+.select_kepco{    border: 1px solid #bfbfbf;    border-radius: 3px;    height: 40px;    padding: 0px 5%;    width: 100%; font-size: 15px;}
+
+button i {    float: right;    position: absolute;    right: 20px;    top: 11px;}
+button i:before {    font-size: 29px;    font-weight: 100;}
+
+/*필수작성요소*/
+.star_red{font-weight: bold; color:red; margin-left:5px;}
+.input_red{border:1px solid red!important;}
+.input_red::placeholder {color: red;}
+.input_kepco::placeholder {font-weight: bold;}
+
+/*폰트 굵기*/
+.bold{font-weight: bold;}
+.normal{font-weight: normal;}
+.lighter{font-weight: lighter;}
+
+.bg_kepco_orange {    background: #f29a2f;    color: #fff;}
+.bg_kepco_red{background: #e64f37; color: #fff;}
+.bg_kepco_navy {    background: #3f4a6a;}
+.bg_kepco_blue{background: #1786d8;color: #fff;}
+.bg_kepco_navy2{background: #213579;}
+
+/*버튼 애니메이션*/
+.button_action{position: relative; overflow: hidden; z-index: 2; transition: all .3s ease;}
+.button_action:after{	 content: '';	  /* position: absolute;	  width: 100%; */	  height: 100%;	  bottom: -100%;	  transition: all .3s ease;	  left: 0;	  z-index:-2}
+.button_action:hover:after{bottom:0;}
+.button_action.bg_cms_navy:after{	   background: #fff;}
+.button_action.bg_cms_navy_white:after{	   background: #fff;}
+.button_action.bg_cms_sky:after{	   background: #fff;}
+.button_action.bg_cms_gray:after{	   background: #fff;}
+.button_action.bg_cms_sky_white:after{	   background: #fff;}
+.button_action.bg_cms_blue:after{	   background: #fff;}
+.button_action.bg_cms_white:after{	   background: #bfbfbf;} 
+
+/*i태그 글씨*/
+.icons.font_navy:before{color:#4583b8}
+.icons.font_white:before{color:#fff}
+.icons.font_blue:before{color:#4c98d9}
+.icons.font_red:before{color: #e64f37;}

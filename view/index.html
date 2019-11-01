@@ -2,25 +2,61 @@
 <html xml:lang="ko" lang="ko">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10" />
 
-		<link rel="stylesheet" type="text/css" href="../resources/js/jquery-1.12.4.min.js" />
-		<link rel="stylesheet" type="text/css" href="../resources/js/jquery.mmenu.min.js" />
-		<link rel="stylesheet" type="text/css" href="../resources/js/jquery.bxslider.min.js" />
-		<link rel="stylesheet" type="text/css" href="../resources/js/jquery-ui-1.12.0-datepicker.js" />
-		<link rel="stylesheet" type="text/css" href="../resources/js/default.js" />
+		<link rel="stylesheet" type="text/css" href="../resources/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="../resources/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
 
-
-		<script type="text/javascript" src="../resources/css/default.css"></script>
-		<script type="text/javascript" src="../resources/css/layout.css"></script>
-		<script type="text/javascript" src="../resources/css/main.css"></script>
+		<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../resources/js/jquery.mmenu.min.js"></script>
+		<script type="text/javascript" src="../resources/js/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../resources/js/jquery-ui-1.12.0-datepicker.js"></script>
+		<script type="text/javascript" src="../resources/js/default.js"></script>
+		<script type="text/javascript" src="../resources/js/onePage.js"></script>
 	<head>
 	
-	<title>김부희의 포트폴리오</title>
+	<title>V's Portfolio</title>
 	</head>
+	<script>
+		$(document).ready(function(){
+			$(".section").onePage({
+				button: true,
+				navi: 'left',
+			});
+		});
+	</script>
 	<body>
-	Hello world!
+		<div class="wrap">
+			<!-- <div class="header">
+				<div></div>
+			</div> -->
+			<div class="container">
+				<div class="section section_main" style="background: lightgray;">
+					<div class="group1">
+						<span>section1</span>
+					</div>
+				</div>
+				<div class="section section_skills" style="background: black;">
+					<div class="group1">
+						<span>section2</span>
+					</div>
+				</div>
+				<div class="section section_portfolio" style="background: darkgray;">
+					<div class="group1">
+						<span>section3</span>
+					</div>
+				</div>
+				<div class="section section_contact" style="background: skyblue;">
+					<div class="group1">
+						<span>section4</span>
+					</div>
+				</div>
+			</div>
+			<!--<div class="footer">
+				<div></div>
+			</div>-->
+		<div>
 	</body>
 </html>
