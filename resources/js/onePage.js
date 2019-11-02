@@ -135,7 +135,7 @@ $.fn.onePage = function(options) {
 			navi.css('display','none');
 		}
 		
-		navi.append(ul);
+		//navi.append(ul);
 		$('body').append(navi);
 		navi.css('width','20%');
 		$('.wrap').css('width','80%');
