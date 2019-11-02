@@ -7,8 +7,10 @@
 /** imsi **/
 .section .group1 span {width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;font-size: 50px;color: #fff;}
 
-.onepage_buttons {position: fixed;right: 0;width: 30px;height: auto;overflow: hidden;top: 50%;}
-.onepage_buttons ul li a {width: 15px;height: 15px;border: 2px solid #fff;display: block;border-radius: 50%;margin-bottom: 5px;box-sizing: border-box;}
-.onepage_buttons ul li.active a{background:#e7d449;border:0px;} 
+.onePage_buttons {position: fixed;right: 0;width: 30px;height: auto;overflow: hidden;top: 50%;}
+.onePage_buttons ul li a {width: 15px;height: 15px;border: 2px solid #fff;display: block;border-radius: 50%;margin-bottom: 5px;box-sizing: border-box;}
+.onePage_buttons ul li.active a{background:#e7d449;border:0px;} 
 
-.navigation {    position: fixed;    background: #fff;    height: 100%;    z-index: 100;    top: 0;   display:inline-block;}
+.onePage_navi {    position: fixed;    background: #fff;    height: 100%;    z-index: 100;    top: 0;   display:inline-block;}
+.onePage_navi ul li {    padding: 20px;    font-size: 20px;    border-bottom: 1px solid #aeaeae;}
+.onePage_navi ul li.active {    color: #ff6600;}

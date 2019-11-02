@@ -22,8 +22,10 @@
 	<script>
 		$(document).ready(function(){
 			$(".section").onePage({
-				button: true,
-				navi: 'left',
+				button: true, //페이징 버튼
+				navi: 'left', //네비 위치(모바일은 무조건 공통)
+				scroll: false, // 스크롤 감추기
+				naviName: ['HOME','SKILL','PORTFOLIO','CONTACT']//네비 이름
 			});
 		});
 	</script>

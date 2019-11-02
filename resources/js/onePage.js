@@ -1,5 +1,8 @@
 //buhee's onepage
-
+var buttons = 'onePage_buttons';
+var navigation = 'onePage_navi';
+var tmp = [];
+	
 $.fn.onePage = function(options) {
 
 	//선택된 요소가 없을 때
@@ -11,13 +14,12 @@ $.fn.onePage = function(options) {
 		button: false,
 		keyboard: false,
 		navi: false,
+		scroll: false, // 스크롤 감추기
+		naviName: []
+	
 	}, options );
 
-
 	section = this;
-	
-	var buttons = 'onepage_buttons';
-	var tmp = [];
 	
 	$.each(section, function (index) {	
 
@@ -77,6 +79,8 @@ $.fn.onePage = function(options) {
 					moveTop = $(elmSelecter).next().offset().top;
 					$('.'+buttons).find('li').removeClass('active');
 					$('.'+buttons).find('li').eq(index+1).addClass('active');
+					$('.'+navigation).find('li').removeClass('active');
+					$('.'+navigation).find('li').eq(index+1).addClass('active');
 
 					
 					//$('.onepage_buttons ul li').removeClass('active');
@@ -89,7 +93,9 @@ $.fn.onePage = function(options) {
 					 moveTop = $(elmSelecter).prev().offset().top;
 					$('.'+buttons).find('li').removeClass('active');
 					$('.'+buttons).find('li').eq(index-1).addClass('active');
-
+					$('.'+navigation).find('li').removeClass('active');
+					$('.'+navigation).find('li').eq(index-1).addClass('active');
+					
 					//$('.onepage_buttons ul li').removeClass('active');
 					//$('.onepage_buttons ul li').eq(index-1).addClass('active');
 				}
@@ -106,17 +112,28 @@ $.fn.onePage = function(options) {
 		});
 	});
 
-
-	var navi = $('<div>').addClass('navigation');
+	//버튼, 네비
+	var navi = $('<div>').addClass(navigation);
 	var buttonDiv = $('<div>').addClass(buttons);
-	var ul = $('<ul>');
+	var ulNavi = $('<ul>');
+	var ulButton = $('<ul>');
+	
 	$.each(section, function(i){
-		var li = $('<li>');
-		var a = $('<a>').attr('href','#');
-		a.attr('title',i+1+'페이지 바로가기')
-
-		li.append(a);
-		ul.append(li);
+		var li1 = $('<li>');
+		var a1 = $('<a>').attr('href','#');
+		
+		var li2 = $('<li>');
+		var a2 = $('<a>').attr('href','#');
+		
+		a1.attr('title',i+1+'페이지 바로가기')
+		a2.attr('title',i+1+'페이지 바로가기')
+		a2.text(settings.naviName[i]);
+		
+		li1.append(a1);
+		li2.append(a2);
+		
+		ulButton.append(li1);
+		ulNavi.append(li2);
 
 	});
 
@@ -135,7 +152,7 @@ $.fn.onePage = function(options) {
 			navi.css('display','none');
 		}
 		
-		//navi.append(ul);
+		navi.append(ulNavi);
 		$('body').append(navi);
 		navi.css('width','20%');
 		$('.wrap').css('width','80%');
@@ -145,28 +162,23 @@ $.fn.onePage = function(options) {
 
 	//버튼기능 on 일 때 버튼들 생성
 	if(settings.button == true){
-		buttonDiv.append(ul);
+		buttonDiv.append(ulButton);
 		$('body').append(buttonDiv);
 		
-		//첫페이지 및 새로고침 시 active
-		var curPos = parseInt($(document).scrollTop());
-		
-		$.each(tmp, function(i){
-			if(tmp[i] == curPos){
-				$('.'+buttons).find('li').eq(i).addClass('active');
-			}
-		});
-
-		$('.'+buttons).find('a').on('click', function(e){
-			e.preventDefault();
-			$('.'+buttons).find('li').removeClass('active');
-			$(this).parents('li').addClass('active');
-			var index = $(this).parents('li').index();
-			var moveTop = tmp[index];
-
-			moveScroll(moveTop);
-		});
 	}
+	
+	//첫페이지 및 새로고침 시 active
+	var curPos = parseInt($(document).scrollTop());
+	
+	$.each(tmp, function(i){
+		if(tmp[i] == curPos){
+			$('.'+buttons).find('li').eq(i).addClass('active');
+			$('.'+navigation).find('li').eq(i).addClass('active');
+		}
+	});
+
+	clickPage(buttons);
+	clickPage(navigation);
 
 };
 
@@ -178,5 +190,24 @@ function moveScroll(moveTop){
 		duration: 600, complete: function () {
 
 		}
+	});
+}
+
+
+function clickPage(target){
+	$('.'+target).find('a').on('click', function(e){
+		e.preventDefault();
+		var index = $(this).parents('li').index();
+		$('.'+buttons).find('li').removeClass('active');
+		$('.'+navigation).find('li').removeClass('active');
+		
+//		$(this).parents('li').addClass('active');
+
+		$('.'+buttons).find('li').eq(index).addClass('active');
+		$('.'+navigation).find('li').eq(index).addClass('active');
+		
+		var moveTop = tmp[index];
+
+		moveScroll(moveTop);
 	});
 }
