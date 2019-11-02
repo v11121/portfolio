@@ -109,19 +109,16 @@ $.fn.onePage = function(options) {
 
 	var navi = $('<div>').addClass('navigation');
 	var buttonDiv = $('<div>').addClass(buttons);
-		var ul = $('<ul>');
-		$.each(section, function(i){
-			var li = $('<li>');
-			var a = $('<a>').attr('href','#');
-			a.attr('title',i+1+'페이지 바로가기')
-			
-			li.append(a);
-			ul.append(li);
+	var ul = $('<ul>');
+	$.each(section, function(i){
+		var li = $('<li>');
+		var a = $('<a>').attr('href','#');
+		a.attr('title',i+1+'페이지 바로가기')
 
-		});
+		li.append(a);
+		ul.append(li);
 
-		buttonDiv.append(ul);
-		navi.append(ul);
+	});
 
 	//네비 추가
 	if(settings.navi.length != false){
@@ -138,6 +135,7 @@ $.fn.onePage = function(options) {
 			navi.css('display','none');
 		}
 		
+		navi.append(ul);
 		$('body').append(navi);
 		navi.css('width','20%');
 		$('.wrap').css('width','80%');
@@ -147,6 +145,7 @@ $.fn.onePage = function(options) {
 
 	//버튼기능 on 일 때 버튼들 생성
 	if(settings.button == true){
+		buttonDiv.append(ul);
 		$('body').append(buttonDiv);
 		
 		//첫페이지 및 새로고침 시 active
