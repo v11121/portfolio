@@ -20,7 +20,7 @@
 
 .section_main{  background: linear-gradient( to right, #68e1ff, #997eff );}
 .section_main .group1 {width: 100%;height: 100%;display: flex;align-items: center;text-align: center;z-index: 100;justify-items: center;justify-content: center;}
-.section_main canvas.particles-js-canvas-el {position: absolute;top: 0;z-index: 100;left: 0;}
+.section_main canvas.particles-js-canvas-el {position: absolute;top: 0;z-index: 100;}
 
 .color_white {    color: #fff;}
 .color_purple {    color: #f750ff;}
@@ -35,10 +35,10 @@
 a:focus, a:hover {    cursor: pointer;}
 
 .preserve-3d {transform-style: preserve-3d;-webkit-transform-style: preserve-3d;}
-.button {margin: 0;border: 0;font-size: 18px;position: relative;top: 50%;left: 50%;margin-top: 17px;margin-left: -100px;width: 200px;height: 50px;text-align: left;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-webkit-user-select: none;cursor: default;}
+.button {margin: 0;border: 0;font-size: 18px;position: relative;top: 50%;left: 50%;margin-top: 17px;margin-left: -100px;width: 200px;height: 50px;text-align: left;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-webkit-user-select: none;cursor: default;box-sizing: border-box;}
 .button:hover {cursor: pointer;}
 .button_3d_double {perspective: 500px;-webkit-perspective: 500px;-moz-perspective: 500px;transform-style: preserve-3d;-webkit-transform-style: preserve-3d;z-index: 100000;position: relative;}
-.button_3d_double a {position: absolute;text-align: center;padding: 10px;border: #fff solid 2px;pointer-events: none;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+.button_3d_double a {position: absolute;text-align: center;padding: 10px;border: #fff solid 3px;pointer-events: none;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;z-index: 9999999999999;position: relative;}
 .button_3d_double a:nth-child(1) {color: #fff;background-color: rgba(255, 255, 255, 0.1);z-index: 0;width: 100%;height: 50px;clip: rect(0px, 100px, 50px, 0px);position: absolute;transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
 .button_3d_double a:nth-child(2) {color: #fff;background-color: #fff;z-index: -1;width: 100%;height: 50px;clip: rect(0px, 100px, 50px, 0px);position: absolute;transform: rotateX(90deg);-webkit-transform: rotateX(90deg);-moz-transform: rotateX(90deg);transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
 .button_3d_double a:nth-child(3) {color: #fff;background-color: rgba(255, 255, 255, 0.1);z-index: 0;width: 100%;height: 50px;clip: rect(0px, 200px, 50px, 100px);position: absolute;transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
