@@ -138,7 +138,7 @@ $.fn.onePage = function(options) {
 	});
 
 	//네비 추가
-	if(settings.navi.length != false){
+	if(settings.navi != false){
 
 		if(settings.navi == 'left'){
 			navi.css('left','0px');
@@ -154,9 +154,9 @@ $.fn.onePage = function(options) {
 		
 		navi.append(ulNavi);
 		$('body').append(navi);
-		navi.css('width','20%');
-		$('.wrap').css('width','80%');
-		$('.wrap').css('margin-left','20%');
+		navi.css('width','70px');
+//		$('.wrap').css('width','80%');
+//		$('.wrap').css('margin-left','20%');
 	}
 
 

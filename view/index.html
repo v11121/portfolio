@@ -9,12 +9,12 @@
 		<link rel="stylesheet" type="text/css" href="../resources/css/layout.css" />
 		<link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
 
-		<script type="text/javascript" src="../resources/js/jquery-1.12.4.min.js"></script>
-		<script type="text/javascript" src="../resources/js/jquery.mmenu.min.js"></script>
-		<script type="text/javascript" src="../resources/js/jquery.bxslider.min.js"></script>
-		<script type="text/javascript" src="../resources/js/jquery-ui-1.12.0-datepicker.js"></script>
-		<script type="text/javascript" src="../resources/js/default.js"></script>
-		<script type="text/javascript" src="../resources/js/onePage.js"></script>
+		<script type="text/javascript" src="../resources/js/common/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="../resources/js/plugin/jquery.bxslider.min.js"></script>
+		<script type="text/javascript" src="../resources/js/plugin/jquery-ui-1.12.0-datepicker.js"></script>
+		<script type="text/javascript" src="../resources/js/portfolio/default.js"></script>
+		<script type="text/javascript" src="../resources/js/portfolio/onePage.js"></script>
+		
 	<head>
 	
 	<title>V's Portfolio</title>
@@ -23,21 +23,44 @@
 		$(document).ready(function(){
 			$(".section").onePage({
 				button: true, //페이징 버튼
+// 				buttonPosition: 2,
 				navi: 'left', //네비 위치(모바일은 무조건 공통)
 				scroll: false, // 스크롤 감추기
-				naviName: ['HOME','SKILL','PORTFOLIO','CONTACT']//네비 이름
+				naviName: ['H','S','P','C']//네비 이름
+			});
+			
+			$('#nextPage').on('click',function(e){
+				e.preventDefault();
+				console.log('test')
+				$('.onePage_buttons ul li').eq(1).find('a').click();
+				
 			});
 		});
 	</script>
+	<style>
+	/* vlogo */
+	.onePage_navi:before {    background: url(../resources/img/v-mark.png);    position: absolute;    content: '';    top: 10px;    background-repeat: no-repeat;    background-size: 100%;   width: 50px;    height: 45px;    left: 10px;    opacity: 0.9;}
+	
+	</style>
 	<body>
 		<div class="wrap">
 			<!-- <div class="header">
 				<div></div>
 			</div> -->
 			<div class="container">
-				<div class="section section_main" style="background: lightgray;">
-					<div class="group1">
-						<span>section1</span>
+				<div class="section section_main" >
+					<div class="group1" id="particles-js">
+						<div class="layer1">
+							<p  class="mainTitle color_white">Hello, I'm <b class="color_purple">Boohee Kim</b>.<br>
+							I'm a front-end developer.</p>
+							<div class="button button_3d_double" id="nextPage">
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+							</div>
+							
+						</div>
 					</div>
 				</div>
 				<div class="section section_skills" style="background: black;">
@@ -60,5 +83,7 @@
 				<div></div>
 			</div>-->
 		<div>
+		<script type="text/javascript" src="../resources/js/plugin/particles.min.js"></script>
+		<script type="text/javascript" src="../resources/js/plugin/app.js"></script>
 	</body>
 </html>

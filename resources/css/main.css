@@ -7,10 +7,43 @@
 /** imsi **/
 .section .group1 span {width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;font-size: 50px;color: #fff;}
 
-.onePage_buttons {position: fixed;right: 0;width: 30px;height: auto;overflow: hidden;top: 50%;}
+.onePage_buttons {position: fixed;right: 0;width: 30px;height: auto;overflow: hidden;top: 50%;z-index: 100000;}
 .onePage_buttons ul li a {width: 15px;height: 15px;border: 2px solid #fff;display: block;border-radius: 50%;margin-bottom: 5px;box-sizing: border-box;}
 .onePage_buttons ul li.active a{background:#e7d449;border:0px;} 
 
-.onePage_navi {    position: fixed;    background: #fff;    height: 100%;    z-index: 100;    top: 0;   display:inline-block;}
-.onePage_navi ul li {    padding: 20px;    font-size: 20px;    border-bottom: 1px solid #aeaeae;}
+.onePage_navi {position: fixed;background: rgba(255, 255, 255, 0.16);height: 100%;z-index: 100;top: 0;display:inline-block;}
+.onePage_navi ul {    position: absolute;    bottom: 0;    width: 100%;    text-align: center;}
+.onePage_navi ul li {padding: 20px;font-size: 20px;border-top: 1px solid rgba(255, 255, 255, 0.3);color: #fff;}
+.onePage_navi ul li a {    text-shadow: 0px 0px 1px black;}
 .onePage_navi ul li.active {    color: #ff6600;}
+.onePage_navi ul li.active a {    text-shadow: none;}
+
+.section_main{  background: linear-gradient( to right, #68e1ff, #997eff );}
+.section_main .group1 {width: 100%;height: 100%;display: flex;align-items: center;text-align: center;z-index: 100;justify-items: center;justify-content: center;}
+.section_main canvas.particles-js-canvas-el {position: absolute;top: 0;z-index: 100;}
+
+.color_white {    color: #fff;}
+.color_purple {    color: #f750ff;}
+
+.mainTitle {font-size: 50px;line-height: 58px;letter-spacing: -2px;font-weight: 300;width: auto;z-index: 1000;}
+.mainTitle b{position: relative;z-index: 1000;transition: all 0.2s ease-in-out;z-index:100000;}
+.mainTitle b:after{content: "";    position: absolute;    width: 100%;    height: 3px;    bottom: 10px;    left: 0;    background: rgba(255, 255, 255, 0.6);    visibility: hidden;    border-radius: 5px;    transform: scaleX(0);    transition: .25s linear;z-index:-10;}
+.mainTitle b:hover:after,.mainTitle b:focus:after {  visibility: visible;  transform: scaleX(1);}
+
+
+/* a.button {display: inline-block;width: auto;margin-top: 20px;border: 2px solid #fff;text-align: center;padding: 15px 40px;font-size: 25px;line-height: 25px;color: #fff;z-index: 1000;position: relative;background: rgba(255, 255, 255, 0.1);} */
+a:focus, a:hover {    cursor: pointer;}
+
+.preserve-3d {transform-style: preserve-3d;-webkit-transform-style: preserve-3d;}
+.button {margin: 0;border: 0;font-size: 18px;position: relative;top: 50%;left: 50%;margin-top: 17px;margin-left: -100px;width: 200px;height: 50px;text-align: left;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-webkit-user-select: none;cursor: default;}
+.button:hover {cursor: pointer;}
+.button_3d_double {perspective: 500px;-webkit-perspective: 500px;-moz-perspective: 500px;transform-style: preserve-3d;-webkit-transform-style: preserve-3d;z-index: 100000;position: relative;}
+.button_3d_double a {position: absolute;text-align: center;padding: 10px;border: #fff solid 2px;pointer-events: none;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+.button_3d_double a:nth-child(1) {color: #fff;background-color: rgba(255, 255, 255, 0.1);z-index: 0;width: 100%;height: 50px;clip: rect(0px, 100px, 50px, 0px);position: absolute;transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
+.button_3d_double a:nth-child(2) {color: #fff;background-color: #fff;z-index: -1;width: 100%;height: 50px;clip: rect(0px, 100px, 50px, 0px);position: absolute;transform: rotateX(90deg);-webkit-transform: rotateX(90deg);-moz-transform: rotateX(90deg);transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
+.button_3d_double a:nth-child(3) {color: #fff;background-color: rgba(255, 255, 255, 0.1);z-index: 0;width: 100%;height: 50px;clip: rect(0px, 200px, 50px, 100px);position: absolute;transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
+.button_3d_double a:nth-child(4) {color: #fff;background-color: #fff;z-index: -1;width: 100%;height: 50px;clip: rect(0px, 200px, 50px, 100px);position: absolute;transform: rotateX(-90deg);-webkit-transform: rotateX(-90deg);-moz-transform: rotateX(-90deg);transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform-origin: 50% 50% -25px;-webkit-transform-origin: 50% 50% -25px;-moz-transform-origin: 50% 50% -25px;}
+.button_3d_double:hover a:nth-child(1) {background-color: #9781ff;transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;transform: rotateX(-90deg);-webkit-transform: rotateX(-90deg);-moz-transform: rotateX(-90deg);}
+.button_3d_double:hover a:nth-child(2) {color: #7db8ff;transition: all 0.2s ease;-webkit-transition: all 0.2s ease;-moz-transition: all 0.2s ease;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);}
+.button_3d_double:hover a:nth-child(3) {background-color: #6adbff;transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform: rotateX(90deg);-webkit-transform: rotateX(90deg);-moz-transform: rotateX(90deg);}
+.button_3d_double:hover a:nth-child(4) {color: #7db8ff;transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);}
