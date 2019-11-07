@@ -126,8 +126,8 @@ $.fn.onePage = function(options) {
 		var a2 = $('<a>').attr('href','#');
 		
 		a1.attr('title',i+1+'페이지 바로가기')
-		a2.attr('title',i+1+'페이지 바로가기')
-		a2.text(settings.naviName[i]);
+		a2.attr('title',settings.naviName[i]+'페이지 바로가기')
+//		a2.text(settings.naviName[i]);
 		
 		li1.append(a1);
 		li2.append(a2);
