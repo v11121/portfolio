@@ -1,6 +1,6 @@
 //buhee's onepage
 var buttons = 'onePage_buttons';
-var navigation = 'onePage_navi';
+var navigation = 'onePage_util';
 var tmp = [];
 	
 $.fn.onePage = function(options) {
@@ -24,7 +24,7 @@ $.fn.onePage = function(options) {
 	$.each(section, function (index) {	
 
 		$(section).eq(index).addClass('page-'+index);
-		tmp.push(parseInt($(section).eq(index).position().top)+1);
+		tmp.push(parseInt($(section).eq(index).position().top));
 		/*터치 이벤트*/
 		var startX,startY, endX,endY;
 		
@@ -113,14 +113,24 @@ $.fn.onePage = function(options) {
 	});
 
 	//버튼, 네비
-	var mmenu = $('<div>').addClass('mmenu_on');
+	var util = $('<div>').addClass('util_on');
 	var navi = $('<div>').addClass(navigation);
 	var buttonDiv = $('<div>').addClass(buttons);
 	var ulNavi = $('<ul>');
 	var ulButton = $('<ul>');
-	var mmenu_btn = $('<a>').attr('href','#');
-	mmenu_btn.addClass('mmenu_btn');
-	mmenu_btn.attr('title','메뉴 보기');
+	
+	//네비 버튼 속성
+	var util_btn = $('<a>').attr('href','#');
+	util_btn.addClass('util_btn');
+	util_btn.attr('title','메뉴 보기');
+	var span1 =  $('<span>').addClass('line');
+	var span2 =  $('<span>').addClass('line');
+	var span3 =  $('<span>').addClass('line');
+	span3.text('menu');
+	util_btn.append(span1);
+	util_btn.append(span2);
+	util_btn.append(span3);
+	
 	$.each(section, function(i){
 		var li1 = $('<li>');
 		var a1 = $('<a>').attr('href','#');
@@ -142,16 +152,13 @@ $.fn.onePage = function(options) {
 
 	//네비 추가
 	if(settings.navi != false){
-		mmenu.append(ulNavi);
-		navi.append(mmenu_btn);
-		navi.append(mmenu);
+		util.append(ulNavi);
+		navi.append(util_btn);
+		navi.append(util);
 		$('body').append(navi);
 		navi.css('width','70px');
-		mmenu.hide();
-//		$('.wrap').css('width','80%');
-//		$('.wrap').css('margin-left','20%');
+		util.css('left','-100px');
 	}
-
 
 	//버튼기능 on 일 때 버튼들 생성
 	if(settings.button == true){
@@ -160,36 +167,41 @@ $.fn.onePage = function(options) {
 		
 	}
 	
-	//첫페이지 및 새로고침 시 active
-	var curPos = parseInt($(document).scrollTop());
-	
-	$.each(tmp, function(i){
-		if(tmp[i] == curPos){
-			$('.'+buttons).find('li').eq(i).addClass('active');
-			$('.'+navigation).find('li').eq(i).addClass('active');
-		}
-	});
-
 	clickPage(buttons);
 	clickPage(navigation);
 	
-	mmenu_btn.on('mouseover', function(e){
+	util_btn.on('mouseover', function(e){
 		e.preventDefault();
-		navi.addClass('mmenu_active');
-		mmenu.show();
+		navi.addClass('util_active');
+		util.stop().animate({"left": '0'});
+		util_btn.addClass('active_btn');
+		util_btn.stop().animate({"left": '69'});
 	});
 
 	navi.on('mouseleave', function(e){
 		e.preventDefault();
-		mmenu.hide();
-		navi.removeClass('mmenu_active');
+		navi.removeClass('util_active');
+		util_btn.removeClass('active_btn');
+		util_btn.stop().animate({"left": '10'});
+		util.stop().animate({"left": '-100'});
+	});
+	
+	//첫페이지 및 새로고침 시 active
+	var curPos = parseInt($(document).scrollTop());
+	
+	$.each(tmp, function(i){
+		console.log(tmp[i] +' : '+curPos);
+		if(tmp[i] == curPos){
+			$('.'+buttons).find('li').eq(i).addClass('active');
+			$('.'+navigation).find('li').eq(i).addClass('active');
+		}
 	});
 };
 
 // 화면 이동 0.8초(800)
 function moveScroll(moveTop){
 	$("html,body").stop().animate({
-		scrollTop: moveTop+1 + 'px'
+		scrollTop: moveTop + 'px'
 	}, {
 		duration: 600, complete: function () {
 
@@ -215,3 +227,24 @@ function clickPage(target){
 		moveScroll(moveTop);
 	});
 }
+
+
+$.fn.slideLeftHide = function(speed, callback) { 
+	  this.animate({ 
+	    width: "hide", 
+	    paddingLeft: "hide", 
+	    paddingRight: "hide", 
+	    marginLeft: "hide", 
+	    marginRight: "hide" 
+	  }, speed, callback);
+	}
+
+$.fn.slideLeftShow = function(speed, callback) { 
+	  this.animate({ 
+	    width: "show", 
+	    paddingLeft: "show", 
+	    paddingRight: "show", 
+	    marginLeft: "show", 
+	    marginRight: "show" 
+	  }, speed, callback);
+	}
