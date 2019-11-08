@@ -120,7 +120,7 @@ $.fn.onePage = function(options) {
 	var ulButton = $('<ul>');
 	
 	//네비 버튼 속성
-	var util_btn = $('<a>').attr('href','#');
+	var util_btn = $('<div>');
 	util_btn.addClass('util_btn');
 	util_btn.attr('title','메뉴 보기');
 	var span1 =  $('<span>').addClass('line');
@@ -149,14 +149,14 @@ $.fn.onePage = function(options) {
 		ulNavi.append(li2);
 
 	});
-
+//
 	//네비 추가
 	if(settings.navi != false){
 		util.append(ulNavi);
 		navi.append(util_btn);
 		navi.append(util);
 		$('body').append(navi);
-		navi.css('width','70px');
+		navi.css('width','100px');
 		util.css('left','-100px');
 	}
 
@@ -185,7 +185,7 @@ $.fn.onePage = function(options) {
 		util_btn.stop().animate({"left": '10'});
 		util.stop().animate({"left": '-100'});
 	});
-	
+
 	//첫페이지 및 새로고침 시 active
 	var curPos = parseInt($(document).scrollTop());
 	

@@ -35,7 +35,7 @@
 .onePage_util ul li:nth-child(3n) a, .onePage_util ul li:nth-child(4n) a {height: 35px;}
 
 .onePage_util .util_on {background: rgba(148, 41, 255, 0.2);border-right: 0px solid #4a029130;width: 100px!important;height: 100%;position: absolute;}
-.onePage_util .util_btn {width: 60px;height: 60px;display: block;position: absolute;top: 50%;left: 10px;background-repeat: no-repeat;z-index: 10000;transform: translateY(-50%);border-radius: 50%;padding-top: 25px;text-align: center;}
+.onePage_util .util_btn {width: 60px;height: 60px;display: block;position: absolute;top: 50%;left: 10px;background-repeat: no-repeat;z-index: 10000;transform: translateY(-50%);border-radius: 50%;padding-top: 25px;text-align: center;cursor: pointer;}
 .onePage_util .util_btn.active_btn:before {content: '';position: absolute;background: rgba(148, 41, 255, 0.2);width: 60px;height: 30px;border-radius: 100px 100px 0px 0px;transform: rotate(90deg);left: 16px;}
 .onePage_util .util_btn .line {width: 30px;height: 3px;background-color: #fff;display: block;margin: 4px auto;-webkit-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
 .onePage_util .util_btn .line:nth-child(3) {background: rgba(255, 255, 255, 0);font-size: 12px;margin: 0px;height: 10px;width: 100%;line-height: 8px;color: #fff;letter-spacing: 0px;}
@@ -91,3 +91,35 @@ a:focus, a:hover {    cursor: pointer;}
 .button_3d_double:hover a:nth-child(3) {transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform: rotateX(90deg);-webkit-transform: rotateX(90deg);-moz-transform: rotateX(90deg);}
 .button_3d_double:hover a:nth-child(4) {color: #7db8ff;transition: all 0.2s ease 0.1s;-webkit-transition: all 0.2s ease 0.1s;-moz-transition: all 0.2s ease 0.1s;transform: rotateX(0deg);-webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);}
 
+/*imsi*/
+.util_btn.active_btn { display: none;transition: all 0.2s ease 0.1s;}
+.onePage_util .util_btn.active_btn:before{display: none;}
+
+
+@media (max-width: 1100px) {
+    .section_main .group1{    width: 96%;}
+    .section_main .group1 .layer1{    width: 80%;    word-break: break-word;}
+    
+}
+
+
+
+
+@media (max-width: 850px) {
+ .onePage_util {    width: 100%!important;    height: 50px;}
+ .onePage_util .util_on {    width: 100%!important;    left: 0px!important;    top: -50px;transition: all 0.2s ease;}
+ .onePage_util .util_on ul{height: auto;}
+ .onePage_util .util_on ul li{display: inline-block;text-align: center;padding-right: 7px;position: relative;top: 10px;}
+ .onePage_util .util_btn{right: 0;padding-top: 0px;transform: translateY(0px);top: 10px;left: auto!important;}
+ .onePage_util.util_active .util_btn{display: block!important;height: auto;}
+ .onePage_util.util_active .util_on {top:0px!important;}
+
+ .section_main .group1 .layer1 .mainTitle{    font-size: 35px;    line-height: 41px;}
+}
+
+
+
+
+@media (max-width: 450px) {
+
+}
