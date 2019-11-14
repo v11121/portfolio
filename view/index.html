@@ -8,7 +8,10 @@
 		<link rel="stylesheet" type="text/css" href="../resources/css/default.css" />
 		<link rel="stylesheet" type="text/css" href="../resources/css/layout.css" />
 		<link rel="stylesheet" type="text/css" href="../resources/css/main.css" />
-
+		
+		<!--메인 임시폰트 -->
+		<link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
+		
 		<script type="text/javascript" src="../resources/js/common/jquery-1.12.4.min.js"></script>
 		<script type="text/javascript" src="../resources/js/plugin/jquery.bxslider.min.js"></script>
 		<script type="text/javascript" src="../resources/js/plugin/jquery-ui-1.12.0-datepicker.js"></script>
@@ -22,9 +25,9 @@
 	<script>
 		$(document).ready(function(){
 			$(".section").onePage({
-				button: true, //페이징 버튼
-// 				buttonPosition: 2,
-				navi: 'left', //네비 위치(모바일은 무조건 공통)
+				slideButton: true, //페이징 버튼
+				scrollButton : true,
+				navi: true, //네비 on(모바일은 무조건 공통)
 				scroll: false, // 스크롤 감추기
 				naviName: ['Home','About','Portfolio','Contact']//네비 이름
 			});
@@ -49,23 +52,26 @@
 				<div class="section section_main" >
 					<div class="group1" id="particles-js">
 						<div class="layer1">
-							<p  class="mainTitle color_white">Hello, I'm <b class="color_purple">Boohee Kim</b>.<br>
-							I'm a publisher & front-end developer.</p>
-							<div class="button button_3d_double" id="nextPage">
-								<a href="다음페이지로 이동 , go to next page">view more</a>
-								<a href="다음페이지로 이동 , go to next page">view more</a>
-								<a href="다음페이지로 이동 , go to next page">view more</a>
-								<a href="다음페이지로 이동 , go to next page">view more</a>
+							<div class="mainTitle color_white">
+								<p><span data-hover="BOO">BOO</span><span data-hover="HEE">HEE</span>'s</p>
+								<span>publisher || frontendDeveloper</span>
 							</div>
+							<p class="mainsubTitle color_white"></p>
+							<!-- <div class="button button_3d_double" id="nextPage">
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+								<a href="다음페이지로 이동 , go to next page">view more</a>
+							</div> -->
 							
 						</div>
 					</div>
 				</div>
 				<div class="section section_skills">
 					<div class="group1">
-						<p class="sub_title">
+						<div class="sub_title">
 							About
-						</p>
+						</div>
 					</div>
 				</div>
 				<div class="section section_portfolio">

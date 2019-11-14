@@ -1,5 +1,5 @@
 //buhee's onepage
-var buttons = 'onePage_buttons';
+var buttons = 'onePage_slideButtons';
 var navigation = 'onePage_util';
 var tmp = [];
 	
@@ -11,7 +11,8 @@ $.fn.onePage = function(options) {
 	}
 
 	var settings = $.extend({ 
-		button: false,
+		slideButton: false,
+		scrollButton: false,
 		keyboard: false,
 		navi: false,
 		scroll: false, // 스크롤 감추기
@@ -112,14 +113,14 @@ $.fn.onePage = function(options) {
 		});
 	});
 
-	//버튼, 네비
+	//슬라이드버튼, 네비
 	var util = $('<div>').addClass('util_on');
 	var navi = $('<div>').addClass(navigation);
 	var buttonDiv = $('<div>').addClass(buttons);
 	var ulNavi = $('<ul>');
 	var ulButton = $('<ul>');
 	
-	//네비 버튼 속성
+	//네비, 슬라이드버튼 속성
 	var util_btn = $('<div>');
 	util_btn.addClass('util_btn');
 	util_btn.attr('title','메뉴 보기');
@@ -156,26 +157,32 @@ $.fn.onePage = function(options) {
 		navi.append(util_btn);
 		navi.append(util);
 		$('body').append(navi);
-		navi.css('width','100px');
-		util.css('left','-100px');
 	}
 
-	//버튼기능 on 일 때 버튼들 생성
-	if(settings.button == true){
+	//슬라이드버튼기능 on 일 때 버튼들 생성
+	if(settings.slideButton == true){
 		buttonDiv.append(ulButton);
 		$('body').append(buttonDiv);
 		
 	}
 	
+	//스크롤버튼기능 on 일 때 버튼들 생성
+	if(settings.scrollButton == true){
+		var scrollbutton = $('<div>').addClass('onePage_scrollbutton');
+		var scroll_target = $('<a>').attr('href','#');
+		$(scrollbutton).append(scroll_target);
+		$('body').append(scrollbutton);
+		$(section).css('padding','20px');
+	}
+	
 	clickPage(buttons);
 	clickPage(navigation);
 	
-	util_btn.on('mouseover', function(e){
+	/*util_btn.on('mouseover', function(e){
 		e.preventDefault();
 		navi.addClass('util_active');
 		util.stop().animate({"left": '0'});
 		util_btn.addClass('active_btn');
-		util_btn.stop().animate({"left": '69'});
 	});
 
 	navi.on('mouseleave', function(e){
@@ -183,8 +190,7 @@ $.fn.onePage = function(options) {
 		navi.removeClass('util_active');
 		util_btn.removeClass('active_btn');
 		util_btn.stop().animate({"left": '10'});
-		util.stop().animate({"left": '-100'});
-	});
+	});*/
 
 	//첫페이지 및 새로고침 시 active
 	var curPos = parseInt($(document).scrollTop());
@@ -227,24 +233,3 @@ function clickPage(target){
 		moveScroll(moveTop);
 	});
 }
-
-
-$.fn.slideLeftHide = function(speed, callback) { 
-	  this.animate({ 
-	    width: "hide", 
-	    paddingLeft: "hide", 
-	    paddingRight: "hide", 
-	    marginLeft: "hide", 
-	    marginRight: "hide" 
-	  }, speed, callback);
-	}
-
-$.fn.slideLeftShow = function(speed, callback) { 
-	  this.animate({ 
-	    width: "show", 
-	    paddingLeft: "show", 
-	    paddingRight: "show", 
-	    marginLeft: "show", 
-	    marginRight: "show" 
-	  }, speed, callback);
-	}
