@@ -109,6 +109,8 @@ $.fn.onePage = function(options) {
 
 	// Slide button and navi
 	var util = $('<div>').addClass('util_on');
+//	util.hide();
+
 	var navi = $('<div>').addClass(navigation);
 	var buttonDiv = $('<div>').addClass(buttons);
 	var ulNavi = $('<ul>');
@@ -117,10 +119,12 @@ $.fn.onePage = function(options) {
 	var util_btn = $('<div>');
 	util_btn.addClass('util_btn');
 	util_btn.attr('title','메뉴 보기');
+	
 	var span1 =  $('<span>').addClass('line');
 	var span2 =  $('<span>').addClass('line');
 	var span3 =  $('<span>').addClass('line');
 	span3.text('menu');
+	
 	util_btn.append(span1);
 	util_btn.append(span2);
 	util_btn.append(span3);
@@ -134,6 +138,7 @@ $.fn.onePage = function(options) {
 		
 		a1.attr('title',i+1+'페이지 바로가기')
 		a2.attr('title',settings.naviName[i]+'페이지 바로가기')
+		a2.text(settings.naviName[i]);
 		
 		li1.append(a1);
 		li2.append(a2);
@@ -190,19 +195,25 @@ $.fn.onePage = function(options) {
 	clickPage(buttons);
 	clickPage(navigation);
 	
-/*util_btn.on('mouseover', function(e){
+	//navi slide + css
+	util_btn.on('click', function(e){
 		e.preventDefault();
-		navi.addClass('util_active');
-		util.stop().animate({"left": '0'});
-		util_btn.addClass('active_btn');
+		if(!$('.'+navigation).hasClass('active')){
+			$('.'+navigation).addClass('active');
+			util.addClass('active');
+		}else{
+			$('.'+navigation).removeClass('active');
+			util.removeClass('active');
+		}
 	});
 
-	navi.on('mouseleave', function(e){
-		e.preventDefault();
-		navi.removeClass('util_active');
-		util_btn.removeClass('active_btn');
-		util_btn.stop().animate({"left": '10'});
-	});*/
+	
+	//Stop scrolling function in navi
+	$('.'+navigation).on("mousewheel DOMMouseScroll", function (e) {
+		event.preventDefault();
+		event.stopPropagation();
+		return false;
+	});
 	
 	//Class of li add active when refresh page
 	var curPos = parseInt($(document).scrollTop());
@@ -217,12 +228,12 @@ $.fn.onePage = function(options) {
 //	
 };
 
-// Move scroll .8s
+// Move scroll .5s
 function moveScroll(moveTop){
 	$("html,body").stop().animate({
 		scrollTop: moveTop + 'px'
 	}, {
-		duration: 600, complete: function () {
+		duration: 500, complete: function () {
 
 		}
 	});

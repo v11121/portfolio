@@ -22,22 +22,41 @@
 .section_main .group1 .mainTitle .subTitle:hover label{-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);width: 100%;}
 .section_main .group1 .mainTitle .subTitle:hover span{  -webkit-transform: translate3d(-300%, 0, 0);transform: translate3d(-300%, 0, 0);}
        
-.section .group1 canvas {z-index: 10;top: 0;left: 0;}
+.section_main .group1 canvas {z-index: 10;top: 0;left: 0;}
+.section .mainTitle_type2 {    margin-top: 50px;    font-size: 50px;    letter-spacing: 0px;    font-weight: 600;}
+
 
 /*option buttons: slide, scroll*/
 .onePage_scrollbutton{position: fixed;bottom: 20px;height: 50px;background-size: 100%;margin: auto;width: 100%;text-align: center;z-index: 100;}
 .onePage_scrollbutton a{background-image: url(./../img/bg_button.png);background-repeat: no-repeat;display: block;width: 155px;height: 50px;margin: auto;position: relative;}
 .onePage_scrollbutton a:before{content:'';position:absolute;border: solid #aeaeae;border-width: 0 2px 2px 0;display: inline-block;transform: rotate(45deg);-webkit-transform: rotate(45deg);width: 15px;height: 15px;left: 67px;top: 15px;animation: topDown 0.7s linear Infinite Alternate;-moz-animation: topDown 0.7s linear Infinite Alternate;-webkit-animation: topDown 0.7s linear Infinite Alternate;-ms-animation: topDown 0.7s linear Infinite Alternate;transition: .3s;}
 .onePage_scrollbutton.last a:before{    transform: rotate(225deg);    -webkit-transform: rotate(225deg);}
-.onePage_slideButtons {position: fixed;right: 0;width: 20px;height: auto;overflow: hidden;top: 50%;z-index: 100000;}
+.onePage_slideButtons {position: fixed;right: 0;width: 20px;height: auto;overflow: hidden;top: 50%;z-index: 10;}
 .onePage_slideButtons ul li a {width: 13px;height: 12px;border: 1px solid #dadada;display: block;margin-bottom: 5px;box-sizing: border-box;background: rgba(161, 161, 161, 0.5);margin-left: 4px;}
 .onePage_slideButtons ul li.active a{background:#e7d449;border:0px;} 
 
 /*option buttons: navi*/
-.onePage_util .util_btn {width: auto;height: auto;display: block;background-repeat: no-repeat;border-radius: 50%;text-align: center;cursor: pointer;}
+.onePage_util {position: fixed;right: 30px;top: 30px;z-index: 100;}
+.onePage_util.active {    width: 100px;    height: 100%;    padding: 30px;    top: 0;    right: 0;    z-index: 100;}
+.onePage_util:before{content: '';position: absolute;-webkit-transform: translate3d(100%, 0, 0);transform: translate3d(100%, 0, 0);width: 100%;height: 100%;transition: transform .3s;}
+.onePage_util.active:before {width: 100%;height: 100%;top: 0;right: 0;background: rgba(133, 202, 228, 0.3);z-index: -10;padding: 0px 30px;-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
+
+.onePage_util .util_on {top: 100px;position: absolute;left: -30px;-webkit-transform: translate3d(100%, 0, 0);transform: translate3d(100%, 0, 0);transition: transform .3s;}
+.onePage_util.active .util_on{-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
+.onePage_util .util_on li a {display: block;width: auto;padding: 5px 0px;color: #499db8;font-size: 25px;margin-bottom: 15px;line-height: 30px;position: relative;transition: .3s;}
+.onePage_util .util_on li.active a {color: #315f6e;font-weight: bold;}
+.onePage_util .util_on li a:hover {color: #315f6e;}
+
+.onePage_util .util_btn {width: auto;height: auto;display: block;background-repeat: no-repeat;text-align: center;cursor: pointer;border-radius: 50%;padding: 2px 0px;}
 .onePage_util .util_btn .line {width: 30px;height: 4px;background-color: #fff;display: block;margin: 4px auto;-webkit-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
 .onePage_util .util_btn .line:nth-child(3) {background: rgba(255, 255, 255, 0);font-size: 12px;margin: 0px;height: 10px;width: 100%;line-height: 8px;color: #fff;letter-spacing: 0px;}
-.onePage_util {position: absolute;right: 30px;top: 30px;z-index: 100;}
+
+.onePage_util.active .util_btn {border: 2px solid #315f6e;transition: all .5s ease-in-out;box-sizing: border-box;}
+.onePage_util.active .util_btn .line {background-color: #315f6e;}
+.onePage_util.active .util_btn .line:nth-child(1){-webkit-transform: translateY(13px) rotate(45deg);-ms-transform: translateY(13px) rotate(45deg);-o-transform: translateY(13px) rotate(45deg);transform: translateY(10px) rotate(45deg);}
+.onePage_util.active .util_btn .line:nth-child(2){-webkit-transform: translateY(-13px) rotate(-45deg);-ms-transform: translateY(-13px) rotate(-45deg);-o-transform: translateY(-13px) rotate(-45deg);transform: translateY(2px) rotate(-45deg);}
+.onePage_util.active .util_btn .line:nth-child(3){  opacity: 0;}
+
 
 /* default color */
 .color_white{color: #fff}
