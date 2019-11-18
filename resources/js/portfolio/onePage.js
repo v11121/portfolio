@@ -202,8 +202,8 @@ $.fn.onePage = function(options) {
 			$('.'+navigation).addClass('active');
 			util.addClass('active');
 		}else{
-			$('.'+navigation).removeClass('active');
 			util.removeClass('active');
+			$('.'+navigation).removeClass('active');
 		}
 	});
 
@@ -225,7 +225,10 @@ $.fn.onePage = function(options) {
 			activeDivClass(section_class, i);
 		}
 	});
-//	
+	
+	titleAnimation();
+	layerAnimation();
+	progressBarAnimation();
 };
 
 // Move scroll .5s
@@ -260,7 +263,7 @@ function activeLiClass(target, i){
 	if(i >= 0){
 		$('.'+target).find('li').removeClass('active');
 		$('.'+target).find('li').eq(i).addClass('active');
-		
+
 		if(i == $('.'+section_class).length-1){
 			$('.'+scrollbtn).addClass('last');
 		}else{
@@ -271,7 +274,21 @@ function activeLiClass(target, i){
 
 //Add div class
 function activeDivClass(target, i){
+	curPageTitle(i);
 	if(i >= 0){
+		if(i == 0){
+			$('.'+navigation).find('span').css('background','#fff');
+			$('.'+navigation).find('span').last().css({
+				'background':'none',
+				'color':'#fff'
+			});
+		}else{
+			$('.'+navigation).find('span').css('background','#4c4c4c');
+			$('.'+navigation).find('span').last().css({
+				'background':'none',
+				'color':'#4c4c4c'
+			});
+		}
 		$('.'+target).removeClass('active');
 		$('.'+target).eq(i).addClass('active');
 		
@@ -280,7 +297,8 @@ function activeDivClass(target, i){
 		}else{
 			$('.'+scrollbtn).removeClass('last');
 		}
-		
 	}
 }
+
+
 
