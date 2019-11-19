@@ -27,10 +27,17 @@ function progressBarAnimation(){
 function layerAnimation(){
 	$.each($('.section'), function(i) {
 		if(i > 0){
-			var layer = $(this).find('.layer1');
-			layer.attr({
+			var layer1 = $(this).find('.layer1').eq(0);
+			layer1.attr({
 				'data-aos' : 'fade-up',
 				'data-aos-delay' : '50',
+				'data-aos-duration' : '1000',
+			});
+			
+			var layer2 = $(this).find('.layer1').last();
+			layer2.attr({
+				'data-aos' : 'fade-up',
+				'data-aos-delay' : '100',
 				'data-aos-duration' : '1000',
 			});
 		}
