@@ -164,13 +164,22 @@ $.fn.onePage = function(options) {
 	}
 	
 	//Use down scroll
-	var scrollbutton = $('<div>').addClass(scrollbtn);
+	var scrollbutton = $('<div>').addClass('onePage_scroll '+scrollbtn);
+	var scrollTop = $('<div>').addClass('onePage_scroll onePage_scrollTop');
+	var scrollBottom = $('<div>').addClass('onePage_scroll onePage_scrollBottom');
+	var scrollLeft = $('<div>').addClass('onePage_scroll onePage_scrollLeft');
+	var scrollRight = $('<div>').addClass('onePage_scroll onePage_scrollRight');
 	var scroll_target = $('<a>').attr('href','#');
 	
 	if(settings.scrollButton == true){
 		$(scrollbutton).append(scroll_target);
 		$('body').append(scrollbutton);
-		$(section).css('padding','20px');
+		$('body').append(scrollTop);
+		$('body').append(scrollBottom);
+		$('body').append(scrollLeft);
+		$('body').append(scrollRight);
+		
+//		$(section).css('padding','20px');
 	}
 	
 	scroll_target.on('click', function(e){
@@ -227,7 +236,7 @@ $.fn.onePage = function(options) {
 	});
 	
 	titleAnimation();
-	layerAnimation();
+//	layerAnimation();
 	progressBarAnimation();
 };
 

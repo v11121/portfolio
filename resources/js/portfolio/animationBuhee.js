@@ -44,4 +44,45 @@ function layerAnimation(){
 	});
 }
 
+function reponsiveSlider(target){
+	if($(window).width() < 960) {
+		$(target).addClass('mobile');
+	}else{
+		$(target).removeClass('mobile');
+	}
 
+	$(window).resize(function() { 
+		if($(window).width() < 960) { 
+			$(target).addClass('mobile');
+		}else{
+			$(target).removeClass('mobile');
+		} 
+	});
+	
+
+	/*$('.section_portfolio.mobile .part_siteLink li').slick({
+	  centerMode: true,
+	  centerPadding: '60px',
+	  slidesToShow: 3,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        arrows: false,
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 3
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        arrows: false,
+	        centerMode: true,
+	        centerPadding: '40px',
+	        slidesToShow: 1
+	      }
+	    }
+	  ]
+	});*/
+}
