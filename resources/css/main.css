@@ -54,7 +54,7 @@
 .section_about .group1 .layer1 .part_contents .eng {    margin-top: 20px;    letter-spacing: 0px;    word-break: keep-all;}
 
 .section_portfolio .group1 .layer1 {max-width: 1100px;margin: 80px auto;height: 100%;/* overflow: hidden; */}
-.section_portfolio .group1 .layer1 ul.part_siteLink li {float: left;width: 24%;height: 266px;margin: 0.5%;border: 1px solid #dedede;box-sizing: border-box;padding: 1%;}
+.section_portfolio .group1 .layer1 ul.part_siteLink > li {float: left;width: 24%;height: 266px;margin: 0.5%;border: 1px solid #dedede;box-sizing: border-box;padding: 1%;}
 .section_portfolio .group1 .layer1 ul.part_siteLink li .img img {height: 35px;margin: 5px 0px 14px 0px;}
 .section_portfolio .group1 .layer1 ul.part_siteLink li .title {font-size: 16px;line-height: 24px;padding-bottom: 10px;padding-top: 10px;position: relative;font-weight: 500;}
 .section_portfolio .group1 .layer1 ul.part_siteLink li .title:before {content: '';position: absolute;width: 80%;margin: auto;border-top: 1px solid #dedede;left: 10%;top: 0;}
@@ -112,6 +112,20 @@
 /* default color */
 .color_white{color: #fff}
 
+/*slick-custom*/
+.section_portfolio.mobile_silder  .group1 .layer1 ul.part_siteLink .slick-track li a {height: 100%;display: block;padding-bottom: 15px;margin-left: 1%;}
+.section_portfolio.mobile_silder  .group1 .layer1 ul.part_siteLink li .img img {    margin: 10px auto;    height: 50px;}
+
+ul.slick-dots li {    display: inline-block;    margin: 5px;}
+ul.slick-dots li button {    font-size: 0;    width: 10px;    height: 12px;    background: rgba(189, 189, 189, 0.5);    border-radius: 50%;}
+ul.slick-dots li.slick-active button {   background: #96e9ff;}
+
+button.slick-arrow {    position: absolute;}
+button.slick-arrow:before{content:'';position:absolute;border: solid #aeaeae;display: inline-block;transform: rotate(45deg);-webkit-transform: rotate(45deg);width: 15px;height: 15px;}
+button.slick-prev.slick-arrow {    left: 0;    top: 30%;    font-size: 0;    width: 20px;   height: 20px;    z-index: 999;}
+button.slick-next.slick-arrow {    right: 0;    top: 30%;    font-size: 0;    width: 20px;    height: 20px;    z-index: 999;}
+button.slick-prev.slick-arrow:before{border-width: 0px 0px 2px 2px;}
+button.slick-next.slick-arrow:before{border-width: 2px 2px 0px 0px;left:-10px}
 
 /*Responsive*/
 @media (max-width: 1870px) {
@@ -174,6 +188,7 @@
     .onePage_slideButtons{right: -1.5px;z-index: 1000;}
     .onePage_scrollbutton a{    width: 130px;    background-size: cover;    height: 30px;}
     .onePage_scrollbutton a:before{left: 57px;animation: topDownMobile 0.7s linear Infinite Alternate;-moz-animation: topDownMobile 0.7s linear Infinite Alternate;-webkit-animation: topDownMobile 0.7s linear Infinite Alternate;-ms-animation: topDownMobile 0.7s linear Infinite Alternate;width: 11px;height: 11px;}
+    .onePage_util.active:before{background: rgba(133, 202, 228, 0.75);}
 }
 
 @media (max-width: 540px) {
@@ -182,6 +197,7 @@
 
 @media (max-width: 430px) {
    .section_main .group1 .mainTitle p{font-size: 3.5pc;line-height:3.5pc;}
+
 }
 
 @media (max-width: 320px) {
